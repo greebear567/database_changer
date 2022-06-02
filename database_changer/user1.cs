@@ -31,6 +31,17 @@ namespace database_changer
                     engCount++;
             }
 
+            string str2 = passwordTextBox.Text;
+            int engCount2 = 0;
+            int rusCount2 = 0;
+            foreach (char c in str2)
+            {
+                if ((c > 'а' && c < 'я') || (c > 'А' && c < 'Я'))
+                    rusCount2++;
+                else if ((c > 'a' && c < 'z') || (c > 'A' && c < 'Z'))
+                    engCount2++;
+            }
+
             string str1 = addressTextBox.Text;
             int engCount1 = 0;
             int rusCount1 = 0;
@@ -46,13 +57,9 @@ namespace database_changer
             {
                 MessageBox.Show("Пароль должен состоять не менее чем из 7 символов!", "Ошибка", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             } else
-            if (rusCount > 0)
+            if (rusCount>0 || rusCount1>0 || rusCount2 > 0)
             {
-                MessageBox.Show("Используйте при вводе имени только латинские буквы!", "Ошибка", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-            }else
-            if (rusCount1 > 0)
-            {
-                MessageBox.Show("Используйте при вводе адреса только латинские буквы!", "Ошибка", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                MessageBox.Show("Используйте только латинские буквы при заполнении базы данных!", "Ошибка", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
             else
             {

@@ -24,6 +24,26 @@ namespace database_changer
                 user1 some = new user1();
                 some.ShowDialog();
             }
+            if (comboBox1.Text == "Производитель")
+            {
+                manufacturer1 some = new manufacturer1();
+                some.ShowDialog();
+            }
+            if (comboBox1.Text == "Товар")
+            {
+                product1 some = new product1();
+                some.ShowDialog();
+            }
+            if (comboBox1.Text == "Корзина")
+            {
+                cart some = new cart();
+                some.ShowDialog();
+            }
+            if (comboBox1.Text == "Заказ")
+            {
+                order1 some = new order1();
+                some.ShowDialog();
+            }
         }
     }
 }
